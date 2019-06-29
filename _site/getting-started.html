@@ -6,9 +6,10 @@
 -->
 <html>
 	<head>
-		<title>Setup Guide | ENVy</title>
+		<title>Getting Started | ENVy</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta property="og:description" content="Getting Started | How to install and use ENVy"/>
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="no-sidebar is-preload">
@@ -45,11 +46,52 @@
 						<!-- Content -->
 						<article id="content">
 							<header>
-								<h2>Setup Guide</h2>
-								<p>A step-by-step guide for setting up ENVy to work with your project. </p>
+								<h2>Getting Started</h2>
+								<p>How to install and use ENVy </p>
 							</header>
 						</article>
-						<p>This page tells you a little bit about me.</p>
+						<h2 id="installing-envy">Installing ENVY</h2>
+
+<p><strong>Prerequisites</strong>: You should have Docker installed and running (i.e. <code class="highlighter-rouge">docker ps</code> doesn’t give you an error), as well as <code class="highlighter-rouge">docker-compose</code>, needed for some projects.</p>
+
+<p>You can install ENVy in a few different ways:</p>
+
+<p><em>pip (recommended)</em>:</p>
+<ul>
+  <li>The recommended installation method is to use Pip: <code class="highlighter-rouge">pip3 install envy-project</code>.</li>
+</ul>
+
+<p><em>from release (or master)</em>:</p>
+<ul>
+  <li>Download a tar.gz release from <a href="https://github.com/envy-project/envy/releases">ENVy’s Github release page</a>.</li>
+  <li>Extract the archive (<code class="highlighter-rouge">tar -xzvf envy-*.tgz</code>)</li>
+  <li>Install the package (<code class="highlighter-rouge">sudo setup.py install</code>)</li>
+</ul>
+
+<p><em>AUR (Arch Linux)</em>:</p>
+<ul>
+  <li>Arch Linux suggests installing Python packages using Pacman instead of pip. There is an <a href="nowhere yet">AUR package available</a></li>
+</ul>
+
+<h2 id="using-envy">Using ENVy</h2>
+<p><em>Note: A more complete guide is available in the <a href="user-guide.html">user guide</a>, this serves as a quick introduction.</em></p>
+
+<p>ENVy is a very simple tool to use. You can see all available commands by running <code class="highlighter-rouge">envy help</code>. When you’re working with a project, this help text will also contain all of the project-specific commands you can use (build, lint, etc.)</p>
+
+<p>ENVy itself also defines a few commands:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">envy up</code>: Create a development environment</li>
+</ul>
+
+<p>When run inside of a project directory, this will create a development environment according to the maintainer’s specifications.</p>
+
+<ul>
+  <li>Running ENVy up the first time</li>
+  <li>Running ENVy nuke</li>
+  <li>Running ENVy help</li>
+</ul>
+
 
 					</div>
 				</div>
