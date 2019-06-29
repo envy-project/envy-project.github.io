@@ -32,10 +32,16 @@ ENVy itself also defines a few commands:
 
 - `envy up`: Create a development environment
 
-When run inside of a project directory, this will create a development environment according to the maintainer's specifications. 
+When run inside of a project directory, this will create a development environment according to the maintainer's specifications. You will see progress output as the process continues. It will mount the project directory inside of the environment. You can leave this container running as long as you'd like - it consumes little to no resources.
 
+- `envy down`: Pause a development environment
 
-- Running ENVy up the first time
+When run inside of a project directory, this will pause the development environment without deleting any data. You may want to run this when you're finished working on a project for a little while.
+
+- `envy nuke`: Delete a development environment
+
+When run inside of a project directory, this will remove the environment created by ENVy. This will not affect the project directory itself - you will not lose any work. This frees up storage space on your host computer. Note that depending on the project configuration, this could delete temporary data - such as a database in use for development.
+
 - Running ENVy nuke
 - Running ENVy help
 
