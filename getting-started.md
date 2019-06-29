@@ -31,17 +31,76 @@ ENVy is a very simple tool to use. You can see all available commands by running
 ENVy itself also defines a few commands:
 
 - `envy up`: Create a development environment
-
+{::options parse_block_html="true" /}
+<div class="wrapper-smallpad">
+<section class="container">
+<div class="row">
+<section class="col-6 col-12-narrower">
+<p>
 When run inside of a project directory, this will create a development environment according to the maintainer's specifications. You will see progress output as the process continues. It will mount the project directory inside of the environment. You can leave this container running as long as you'd like - it consumes little to no resources.
+</p>
+</section>
+<section class="col-6 col-12-narrower">
+<div class="highlighter-rouge big-wrapper"><div class="highlight big-child"><pre class="highlight">
+<code>~ $ cd golang-hello-world
+golang-hello-world $ envy up
+Detected change in config environment.
+Creating ENVy environment image.
+Creating ENVy container
+ENVy environment is ready!
+</code>
+</pre></div></div>
+</section>
+</div>
+</section>
+</div>
+{::options parse_block_html="false" /}
 
 - `envy down`: Pause a development environment
 
+{::options parse_block_html="true" /}
+<div class="wrapper-smallpad">
+<section class="container">
+<div class="row">
+<section class="col-6 col-12-narrower">
+<div class="highlighter-rouge big-wrapper"><div class="highlight big-child"><pre class="highlight">
+<code>~ $ golang-hello-world $ envy down
+ENVy environment stopped.
+</code>
+</pre></div></div>
+</section>
+<section class="col-6 col-12-narrower">
+<p>
 When run inside of a project directory, this will pause the development environment without deleting any data. You may want to run this when you're finished working on a project for a little while.
+</p>
+</section>
+</div>
+</section>
+</div>
+{::options parse_block_html="false" /}
+
 
 - `envy nuke`: Delete a development environment
 
+{::options parse_block_html="true" /}
+<div class="wrapper-smallpad">
+<section class="container">
+<div class="row">
+<section class="col-6 col-12-narrower">
+<p>
 When run inside of a project directory, this will remove the environment created by ENVy. This will not affect the project directory itself - you will not lose any work. This frees up storage space on your host computer. Note that depending on the project configuration, this could delete temporary data - such as a database in use for development.
+</p>
+</section>
+<section class="col-6 col-12-narrower">
+<div class="highlighter-rouge big-wrapper"><div class="highlight big-child"><pre class="highlight">
+<code>~ $ golang-hello-world $ envy down
+ENVy environment destroyed.
+</code>
+</pre></div></div>
+</section>
+</div>
+</section>
+</div>
+{::options parse_block_html="false" /}
 
-- Running ENVy nuke
-- Running ENVy help
 

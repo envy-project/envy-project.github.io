@@ -1,6 +1,30 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
 
+code.highlighter-rouge {
+    background-color: #555;
+    padding: 2px;
+    border-radius: 5px;
+    color: #fff
+}
+
+.big-wrapper {
+	height:100%;
+}
+
+.big-child{ 
+	height: 100%;
+	overflow-x: auto
+}
+div.highlighter-rouge > div.highlight {
+	box-shadow:inset 2px 5px 15px #000;
+	border-radius:5px;
+	padding: 20px;
+	background-color: #434343;
+	color: white;
+}
+
+
 /*
 	Telephasic by HTML5 UP
 	html5up.net | @ajlkn
@@ -2075,6 +2099,13 @@ input, select, textarea {
 		overflow-x: hidden;
 		padding: 6em 0 6em 0;
 	}
+	
+	.wrapper-smallpad {
+		position: relative;
+		background: #fff;
+		overflow-x: hidden;
+		padding: 2em 0 2em 0;
+	}
 
 	.image-wrapper {
 		position: relative;
@@ -2423,7 +2454,9 @@ input, select, textarea {
 			.wrapper {
 				padding: 5em 0 5em 0;
 			}
-
+			.wrapper-smallpad {
+				padding: 2em 0 2em 0;
+			}
 			#header-wrapper {
 				padding: 2em 0 2em 0;
 			}
@@ -2468,7 +2501,9 @@ input, select, textarea {
 			.wrapper {
 				padding: 4em 2em 4em 2em;
 			}
-
+			.wrapper-smallpad {
+				padding: 1em 1em 1em 1em;
+			}
 			#header-wrapper {
 				padding: 5em 0 1em 0;
 			}
@@ -2703,7 +2738,9 @@ input, select, textarea {
 			.wrapper {
 				padding: 3em 20px 3em 20px;
 			}
-
+			.wrapper-smallpad {
+				padding: 1em 20px 1em 20px;
+			}
 			#header-wrapper {
 				padding: 3em 20px 20px 20px;
 				text-align: center;
