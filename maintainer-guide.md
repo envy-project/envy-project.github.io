@@ -8,13 +8,15 @@ This is a step-by-step guide for adding ENVy support to your project. This guide
 
 A number of example ENVyfiles are available for a variety of languages and frameworks, see our [examples repository](http://github.com/envy-project/examples). You may still get some value out of following this guide to help you customize ENVy to better suit your progress.
 
-# Creating the Configuration File
+Creating the Configuration File
+---
 
 ENVy uses a single configuration file within your project. Create an empty file named `.envyfile` at the root of your project directory. This directory will be mounted inside of the development environment, so avoid creating the ENVyfile in an unused sub-folder.
 
 ENVy will now detect your project as ENVy compatible, though an empty configuration file isn't particularly useful. The next sections will walk you through filling out the configuration file.
 
-# Setting up the Environment
+Setting up the Environment
+---
 
 The first major part of the ENVyfile is configuring the environment your project will run in.
 
