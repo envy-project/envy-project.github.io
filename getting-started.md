@@ -26,7 +26,7 @@ Using ENVy
 ---
 *Note: A more complete guide is available in the [user guide](user-guide.html), this serves as a quick introduction.*
 
-ENVy is a very simple tool to use. You can see all available commands by running `envy help`. When you're working with a project, this help text will also contain all of the project-specific commands you can use (build, lint, etc.)
+ENVy is a very simple tool to use. You can see all available commands by running `envy --help`. When you're working with a project, this help text will also contain all of the project-specific commands you can use (build, lint, etc.)
 
 ENVy itself also defines a few commands:
 
@@ -93,7 +93,7 @@ When run inside of a project directory, this will remove the environment created
 </section>
 <section class="col-6 col-12-narrower">
 <div class="highlighter-rouge big-wrapper"><div class="highlight big-child"><pre class="highlight">
-<code>~ $ golang-hello-world $ envy down
+<code>~ $ golang-hello-world $ envy nuke
 ENVy environment destroyed.
 </code>
 </pre></div></div>
