@@ -205,6 +205,7 @@ actions:Actions are scripts or commands contributors are likely to use often
 
 # Services
 
+<div class="indentThis" markdown="1">
 Many projects need accompanying services to run at the same time in order to have a complete development environment. ENVy supports this through the concept of _services_ (sometimes called "sidecar services"). These are started at the same time `envy up` is run, and stopped when `envy down` or `envy nuke` is run.
 
 At the moment, only `docker-compose` based service files are supported. Please open [an issue](https://github.com/envy-project/envy/issues) if you'd like to see more.
@@ -215,3 +216,4 @@ You can specify the docker-compose file you'd like ENVy to manage state for usin
 services:
   compose-file: docker-compose.yml
 ```
+</div>
