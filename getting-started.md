@@ -24,7 +24,6 @@ You can install ENVy in a few different ways:
 
 Using ENVy
 ---
-*Note: A more complete guide is available in the [user guide](user-guide.html), this serves as a quick introduction.*
 
 ENVy is a very simple tool to use. You can see all available commands by running `envy --help`. When you're working with a project, this help text will also contain all of the project-specific commands you can use (build, lint, etc.)
 
