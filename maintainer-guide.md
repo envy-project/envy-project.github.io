@@ -244,7 +244,8 @@ You can specify a docker-compose configuration file using the `compose-file` key
 ...
 actions:
   ...
-compose-file: docker-compose.yml
+services:
+  compose-file: docker-compose.yml
 </code>
 </pre></div></div>
 </section>

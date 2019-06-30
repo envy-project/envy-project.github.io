@@ -77,6 +77,9 @@ This is an overview of what an Envyfile can look like. Hover over the underlined
   - name: bundle
     script: 'bundle'
     help: 'run bundler'
-<span style="color: tomato" class="tooltip">compose-file: docker-compose.yml<span class="tooltiptext">An optional docker-compose file, started and stopped with the ENVy environment</span></span>
+services:
+  <span style="color: tomato" class="tooltip">compose-file: docker-compose.yml<span class="tooltiptext">An optional docker-compose file, started and stopped with the ENVy environment</span></span>
 </code>
 </pre></div></div>
+
+
