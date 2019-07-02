@@ -116,6 +116,21 @@ environment:
 <br />
 </div>
 
+`project-dir`
+---
+<div class="indentThis" markdown="1">
+A string (_optional_)
+
+This string describes the project directory mount path within the ENVy environment. If not specified, it defaults to /project. This can be useful for certain projects (e.g. Golang) where the project must exist and a particular path format. This path must be specified as an _absolute path_.
+
+```
+environment:
+  project-dir: '/anotherDirectory'
+```
+<br />
+<br />
+</div>
+
 `system-packages`
 ---
 <div class="indentThis" markdown="1">
@@ -183,15 +198,19 @@ Actions are invokable by using their name directly after `envy` on the command l
 
 Users can see the available actions in a project by running `envy --help` anywhere in the project directory.
 
-All actions are run from the project root directory. If they should be run from another directory, use a `cd` command at the start of your script. (see [this issue](https://github.com/envy-project/envy/issues/40) for status updates)
+All actions, by default, are run from the current working directory. If this is not desirable, then set the `disable_relpath` option for the action.
 
 Actions contain three required fields:
   - `name` (mandatory, string) that contributors can call this action using
   - `script` (mandatory, string) the command passed to Bash (can contain Bash special characters like pipes or ampersands) that executes this action.
   - `help` (mandatory, string) the help text presented to users when they run `envy --help`
 
+as well as one optional field:
+
+  - `disable_relpath` (mandatory, boolean) to disable the default behaviour of scripts being run from the current working directory. If this is set to true, then all scripts will start from the project root. 
+
 ```
-actions:Actions are scripts or commands contributors are likely to use often
+actions:
   - name: lint
     script: 'rubocop'
     help: 'lint the project'
