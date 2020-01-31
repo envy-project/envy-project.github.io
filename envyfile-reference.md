@@ -160,6 +160,8 @@ Each step has a `name` (mandatory, string) to describe the step, a `run` (mandat
 
 Ideally, setup steps are written in such a way that they are _idempotent_, and as such can be run multiple times without causing changes (or at least without causing damage) to the development environment. This allows for more flexibility when deciding on when to trigger setup steps.
 
+Note that by default, steps are run with the same UID/GID as the user invoking ENVy. This helps avoid mangling file permissions in your repository. If this causes setup steps to fail, add the `as_user: false` flag to your setup step.
+
 Triggers
 ---
 <div style="margin-top: 1em" class="indentThis" markdown="1">
@@ -172,11 +174,13 @@ There are three types of Triggers:
 - `system-packages`: Run this step any time one of the listed system packages has updated or been reinstalled. Useful for reinstalling non-native packages that are likely to depend on native packages, like Python modules.
 - `files`: Run this step any time one of the listed files within the project directory has changed. Useful for reinstalling non-native dependencies, with tools like `pip` or `npm`.
 - `steps`: Run this step any time of of the named steps are run. This can be useful for finalizing installation of another step, or to create dependency chains of steps.
+- `always`: Run this step every time `envy up` is run.
 </div>
 ```
 environment:
   setup-steps:
     - name 'Seed sqlite database'
+      as_user: false
       run:
         - 'sqlite3 maindata.db < create.sql'
     - name: 'install npm packages'
