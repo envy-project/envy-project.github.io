@@ -43,10 +43,12 @@ When run inside of a project directory, this will create a development environme
 <div class="highlighter-rouge big-wrapper"><div class="highlight big-child"><pre class="highlight">
 <code>~ $ cd golang-hello-world
 golang-hello-world $ envy up
-Detected change in config environment.
-Creating ENVy environment image.
-Creating ENVy container
-ENVy environment is ready!
+Finding Docker Container ...
+Finding Docker Container ✓
+Starting Container ...
+Starting Container ✓
+Installing System Packages (already complete) ⤳
+Setting up home environment (already complete) ⤳
 </code>
 </pre></div></div>
 </section>
@@ -64,7 +66,12 @@ ENVy environment is ready!
 <section class="col-6 col-12-narrower">
 <div class="highlighter-rouge big-wrapper"><div class="highlight big-child"><pre class="highlight">
 <code>~ $ golang-hello-world $ envy down
-ENVy environment stopped.
+Connecting to Docker ...
+Connecting to Docker ✓
+Finding Docker Container ...
+Finding Docker Container ✓
+Stopping Docker Container ...
+Stopping Docker Container ✓
 </code>
 </pre></div></div>
 </section>
@@ -93,7 +100,8 @@ When run inside of a project directory, this will remove the environment created
 <section class="col-6 col-12-narrower">
 <div class="highlighter-rouge big-wrapper"><div class="highlight big-child"><pre class="highlight">
 <code>~ $ golang-hello-world $ envy nuke
-ENVy environment destroyed.
+Destroying ENVy Environment ...
+Destroying ENVy Environment ✓
 </code>
 </pre></div></div>
 </section>
@@ -101,5 +109,3 @@ ENVy environment destroyed.
 </section>
 </div>
 {::options parse_block_html="false" /}
-
-

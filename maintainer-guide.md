@@ -47,7 +47,7 @@ ENVy manages it's environments using Docker, which means when creating an ENVy e
 
 Declaring System Packages
 ---
-At this point, we have the starting point for our environment, but it doesn't contain all of the dependencies we need. We need to further customize the environment. The first step to this customization is adding system packages, specifically `apt` packages on Ubuntu. For each package, you will need to specify the package name as the 'recipe', and you can optionally use a specific version with the 'version' key. 
+At this point, we have the starting point for our environment, but it doesn't contain all of the dependencies we need. We need to further customize the environment. The first step to this customization is adding system packages, specifically `apt` packages on Ubuntu. For each package, you will need to specify the package name as the 'recipe', and you can optionally use a specific version with the 'version' key.
 
 {::options parse_block_html="true" /}
 <div class="wrapper-smallpad">
@@ -111,9 +111,11 @@ For envy-project, we have a few steps to do. First, installing the `python3.7` p
         - "rm /usr/bin/python3"
         - "ln -s /usr/bin/python3.7 /usr/bin/python3"
     - name: pipenv
+      label: "Installing pipenv"
       run:
         - "pip3 install pipenv"
     - name: python-deps
+      label: "Installing python dependencies"
       run:
         - "pipenv install -d"
 </code>
