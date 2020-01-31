@@ -46,13 +46,13 @@ description: Detailed guide to ENVyfile syntax and contents.
   opacity: 1;
 }
 h1:not(#logo) {
-		font-size: 2.5em;
-		line-height: 1.25em;
-		font-weight: bold;
+  font-size: 2.5em;
+  line-height: 1.25em;
+  font-weight: bold;
 }
 
 .indentThis {
-	margin-left: 50px;
+  margin-left: 50px;
 }
 </style>
 
@@ -70,6 +70,7 @@ This is an overview of what an Envyfile can look like. Hover over the underlined
     - recipe: docker
   <span style="color: green" class="tooltip">setup-steps:<span class="tooltiptext">Additional setup steps not included in APT packages</span></span>
     - <span style="color: darkgreen" class="tooltip">name: bundle<span class="tooltiptext">The name of the script</span></span>
+      <span style="color: magenta" class="tooltip">label: "Installing Ruby Dependencies"<span class="tooltiptext">The step label that will be displayed when envy runs this step</span></span>
       <span style="color: teal" class="tooltip">run:<span class="tooltiptext">Commands to run to complete this step</span></span>
         - <span style="color: teal" class="tooltip">"bundle install"<span class="tooltiptext">A command passed to the Bash shell - can contain Bash special characters.</span></span>
       <span style="color: purple" class="tooltip">triggers:<span class="tooltiptext">List of things that can cause this step to be run (in addition to the first envy up)</span></span>
@@ -211,7 +212,7 @@ Actions contain three required fields:
 
 as well as one optional field:
 
-  - `disable_relpath` (mandatory, boolean) to disable the default behaviour of scripts being run from the current working directory. If this is set to true, then all scripts will start from the project root. 
+  - `disable_relpath` (mandatory, boolean) to disable the default behaviour of scripts being run from the current working directory. If this is set to true, then all scripts will start from the project root.
 
 ```
 actions:
