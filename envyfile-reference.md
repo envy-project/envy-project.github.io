@@ -77,6 +77,7 @@ This is an overview of what an Envyfile can look like. Hover over the underlined
         <span style="color: purple" class="tooltip">files:<span class="tooltiptext">Files that are watched for changes and should cause this step to run</span></span>
           - <span style="color: purple" class="tooltip">Gemfile<span class="tooltiptext">A Ruby gemfile, specifying Ruby packages to be installed</span></span>
           - Gemfile.lock
+  <span style="color: red" class="tooltip">x-forward: True<span class="tooltiptext">Enable X-forwarding for the project. Optional, defaults to False.</span></span>
 <span style="color: goldenrod" class="tooltip">actions:<span class="tooltiptext">Actions are scripts or commands contributors are likely to use often</span></span>
   - <span style="color: peru" class="tooltip">name: lint<span class="tooltiptext">The name of the command, used to invoke it</span></span>
     <span style="color: chocolate" class="tooltip">script: 'rubocop'<span class="tooltiptext">The Bash invocation to be run upon invoking the command</span></span>
@@ -88,7 +89,7 @@ This is an overview of what an Envyfile can look like. Hover over the underlined
     script: 'bundle'
     help: 'run bundler'
 services:
-  <span style="color: tomato" class="tooltip">compose-file: docker-compose.yml<span class="tooltiptext">An optional docker-compose file, started and stopped with the ENVy environment</span></span>
+  <span style="color: tomato" class="tooltip">compose-file: docker-compose.yml<span class="tooltiptext">An _optional_ docker-compose file, started and stopped with the ENVy environment</span></span>
 </code>
 </pre></div></div>
 <br />
