@@ -22,6 +22,13 @@ You can install ENVy in a few different ways:
 *AUR (Arch Linux)*:
    - Arch Linux suggests installing Python packages using Pacman instead of pip. There is an [AUR package available](nowhere yet)
 
+**Special Instructions for Mac OS X**:
+   - Install [Docker for Mac](https://docs.docker.com/docker-for-mac/install/).
+   - If your project uses X-forwarding:
+     1. Install [XQuartz](https://www.xquartz.org/).
+     2. Enable the "Allow connections from network clients" setting under XQuartz's security tab.
+     3. (re)Start XQuartz. XQuartz must be running for X-forwarding to work.
+
 Using ENVy
 ---
 
