@@ -90,6 +90,11 @@ This is an overview of what an Envyfile can look like. Hover over the underlined
     help: 'run bundler'
 services:
   <span style="color: tomato" class="tooltip">compose-file: docker-compose.yml<span class="tooltiptext">An _optional_ docker-compose file, started and stopped with the ENVy environment</span></span>
+<span style="color: navy" class="tooltip">network:<span class="tooltiptext">The docker network configuration for envy. Specificy "host" to use docker's host networking (not fully implemented on Docker for Mac), or provide a dictionary with the options below</span></span>
+  <span style="color: orange" class="tooltip">name: my-docker-network<span class="tooltiptext">The name of a specific docker network for the envy container to run on. Usually only useful in conjuction with a docker-compose file</span></span>
+  <span style="color: orchid" class="tooltip">ports: <span class="tooltiptext">The list of ports to map from the environment to your host network. Useful for accessing web servers and similar that are run inside envy.</span></span>
+    - 43
+    - 80:8080
 </code>
 </pre></div></div>
 <br />
@@ -240,5 +245,29 @@ You can specify the docker-compose file you'd like ENVy to manage state for usin
 ```
 services:
   compose-file: docker-compose.yml
+```
+</div>
+<br />
+<br />
+</div>
+
+# Network
+
+<div class="indentThis" markdown="1">
+Envy is intended to operate transparently inside its own environment. However, sometimes it is necessary to be able to interact with services from the envy environment, or access the environment from your host machine. ENVy supports this through _network_ configuration.
+
+By default, ENVy's underlying docker container uses an arbitrarily assigned network, making it difficult to connect to or from the environment. By specificying a network type of `host` ENVy will use docker's host networking to make the experience closer to running directly:
+```
+network: "host"
+```
+Unfortunately, this feature is not fully implemented within Docker for Mac, so if the project is expected to be developed on Mac then host networking must be used with caution.
+
+ENVy can also support picking the docker network to communicate on, as well as expose ports to the host by providing named keys to the `network` key instead of a string:
+```
+network:
+  name: docker-network-name
+  ports:
+    - 443
+    - 80:8080
 ```
 </div>
